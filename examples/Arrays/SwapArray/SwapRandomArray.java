@@ -17,7 +17,7 @@ public class SwapRandomArray {
 	public void swap(int i, int j) {
 		int tmp = randomArray[i];
 		randomArray[i] = randomArray[j];
-		randomArray[j] = randomArray[i];
+		randomArray[j] = randomArray[tmp];
 	}
 
 	public String toString() {
