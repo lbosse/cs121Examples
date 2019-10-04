@@ -20,6 +20,7 @@ public class WhileLoopExample {
 			playAgain = scan.next();
 		}
 		System.out.println("Game over. Goodbye!");
+    scan.close();
 	}
 
 }
