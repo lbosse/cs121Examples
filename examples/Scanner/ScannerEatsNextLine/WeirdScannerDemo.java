@@ -14,7 +14,7 @@ public class WeirdScannerDemo {
 		String s = scan.nextLine();
 		System.out.print("Your number: " + x + "\n");
 		System.out.print("Your string: " + s + "\n");
-
+		scan.close();
 	}
 
 }
