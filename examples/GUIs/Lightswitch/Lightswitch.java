@@ -18,9 +18,13 @@ public class Lightswitch extends JButton {
 		public void actionPerformed(ActionEvent e) {
 			state = !state;
 			if (state) {
-				((JButton)e.getSource()).setText("ON");
+        /* We can call setText like this because our LightSwitchListener is inside
+         * our Lightswitch class - so our Lightswitch's setText method is visible -
+         * it is "in scope".
+         */
+				setText("ON");
 			} else {
-				((JButton)e.getSource()).setText("OFF");
+				setText("OFF");
 			}
 		}
 		
