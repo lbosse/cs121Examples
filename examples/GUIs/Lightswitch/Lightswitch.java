@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,6 +10,7 @@ public class Lightswitch extends JButton {
 	public Lightswitch() {
 		state = false;
 		this.setText("OFF");
+		this.setForeground(Color.GRAY);
 		this.addActionListener(new LightswitchListener());
 	}
 	
@@ -17,14 +19,13 @@ public class Lightswitch extends JButton {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			state = !state;
+			JButton source = ((JButton)e.getSource());
 			if (state) {
-        /* We can call setText like this because our LightSwitchListener is inside
-         * our Lightswitch class - so our Lightswitch's setText method is visible -
-         * it is "in scope".
-         */
-				setText("ON");
+				source.setText("ON");
+				source.setForeground(Color.BLACK);
 			} else {
-				setText("OFF");
+				source.setText("OFF");
+				source.setForeground(Color.GRAY);
 			}
 		}
 		
