@@ -1,21 +1,21 @@
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class ButtonDriver {
 
 	public static void main(String[] args) {
-		JFrame frame = new JFrame("LIGHTSWITCHSIMULATOR.EXE");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Causes the program to exit when the window is closed
+		JFrame frame = new JFrame("Lightswitch");
+		frame.setPreferredSize(new Dimension(300, 300));
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		/* getContentPane gets the Container inside the JFrame that can have components added to it */
-		frame.getContentPane().add(new Lightswitch()); 
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.add(new LightButton());
+		frame.getContentPane().add(buttonPanel);
 		
-		frame.setPreferredSize(new Dimension(500, 500)); // Sets the preferred size of the JFrame (will try to fit it if it can)
-		frame.pack(); // Takes the preferred size and packs the JFrame to fit the preferred size of the frame and layout of the components
+		frame.pack();
 		frame.setVisible(true);
-
 	}
 
 }
